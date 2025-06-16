@@ -21,10 +21,56 @@ You will learn
 
 The above example indicates that
 
-+ it will use `C#` compiler to the transformed file by `T4`.
++ In `language="C#`, it will use `C#` compiler to the transformed file by `T4`.
+
++ In `debug="true"`, the debugging information will appear in transformed file by `T4`.
+
++ In `hostSpecific="true"`, `T4` template needs to interact with the host application that's running the transformed file by `T4`.
+
+#### example 2
 
 ```
-<#@ template debug="true" hostSpecific="true" language="C#" #>
+<#@ template debug="true" hostSpecific="false" language="C#" #>
 ```
 
+The above example indicates that
 
++ In `language="C#`, it will use `C#` compiler to the transformed file by `T4`.
+
++ In `debug="true"`, the debugging information will appear in transformed file by `T4`.
+
++ In `hostSpecific="false"`, `T4` template does NOT need to interact with the host application that's running the transformed file by `T4`.
+
+> [!IMPORTANT]
+> When can we specify `hostSpecific="false"?
+> 
+> + we're running the template outside of a specific host, or 
+>
+> + we don't need to interact with the host.
+
+### reference
+#### Google Gemini
++ [Google Gemini's response -- explanation of `template` directives](https://g.co/gemini/share/5f8d85545c07)
+
+## CH8.2 -- `output`
+
+| attribute | meaning | description | notes | notice
+| :-- | :-- | :-- |
+| `extension` | `file extension` | `T4` engine will generate the transformed file with specified file extension. | | |
+
+### examples
+#### example 1
+
+```
+<#@ output extension=".sql" #>
+```
+
+indicates that the `T4` engine will generate a transformed file the ends with `.sql`.
+
+### further reading
+#### Google Gemini
++ About commonly used file extension, see
+
+[Google Gemini's response -- explain the directive output in Text template](https://g.co/gemini/share/51232635d567)
+
++ About scenario, see [Google Gemini's response -- explain the directive output in Text template](https://g.co/gemini/share/51232635d567)
