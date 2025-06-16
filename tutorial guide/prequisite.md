@@ -8,3 +8,11 @@ It is highly recommended to develop the project with these prequisites
 
 + `Visual Studio 2022` as `IDE`
 
+## prequisite knowledgement
+Familiar with 
+
++ core concept and design pattern of programming (such as `namespace` and `OOP` design pattern)
+
++ `C#` syntax
+
++ the basic structure of `html` (such as tag `<` `>`)
