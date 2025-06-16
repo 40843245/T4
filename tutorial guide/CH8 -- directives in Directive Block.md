@@ -5,6 +5,7 @@ You will learn
 + some commonly used directives in Directive Block
 
 ## CH8.1 -- `template`
+tell `T4` engine it is a `text template` and its template info.
 
 | attribute | meaning | description | notes | notice
 | :-- | :-- | :-- |
@@ -53,6 +54,7 @@ The above example indicates that
 + [Google Gemini's response -- explanation of `template` directives](https://g.co/gemini/share/5f8d85545c07)
 
 ## CH8.2 -- `output`
+tell `T4` engine the information for generating the transformed file.
 
 | attribute | meaning | description | notes | notice
 | :-- | :-- | :-- |
@@ -76,6 +78,7 @@ indicates that the `T4` engine will generate a transformed file the ends with `.
 + About scenario, see [Google Gemini's response -- explain the directive output in Text template](https://g.co/gemini/share/51232635d567)
 
 ## CH8.3 -- `assembly`
+tell `T4` engine to load assembly for transformed file.
 
 | attribute | meaning | description | notes | notice
 | :-- | :-- | :-- |
@@ -140,4 +143,28 @@ indicates that the `T4` engine will generate a transformed file the ends with `.
 
 [Google Gemini's response -- explain assembly directives in T4 Text Template](https://g.co/gemini/share/b686527ffc6f)
 
-##
+## CH8.4 -- `import`
+tell `T4` engine to generate `import` statement in transformed file.
+
+| attribute | meaning | description | notes | notice
+| :-- | :-- | :-- |
+| `namespace` | `namespace` | tell `T4` engine to generate `import` statement in transformed file with specified `namespace`. | | |
+
+### examples
+#### example 1
+
+```
+<#@ import namespace="System.Linq" #>
+```
+
+indicates that the transformed file
+
+will contain this `import` statement.
+
+```
+using System.Linq;
+```
+
+### reference
+#### Google Gemini
+[Google Gemini's response -- explain import directives in T4 Text template](https://g.co/gemini/share/588688a34f40)
