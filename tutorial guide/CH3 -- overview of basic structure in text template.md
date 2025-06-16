@@ -107,6 +107,10 @@ Including
 For example,
 
 ```
+<#@ template debug="true" hostSpecific="true" language="C#" #>
+<#@ output extension=".txt" #>
+
+<# // ... other logic here #>
 <#+
 private string GetGreeting()
 {
@@ -128,6 +132,26 @@ private string GetGreeting()
 <# // This is a standard block calling the method from the class feature block #>
 <#= GetGreeting() #> World!
 ```
+
+## CH3.5 -- outside block
+The text outside of block will be treated as which type 
+
+according to the type of output (i.e. file extension of file that it will be generated)
+
+> [!IMPORTANT]
+> File extension of file that it will be generated
+>
+> determines by `extension` attribute in `output` directive. 
+>
+> For example,
+>
+> ```
+> <#@ output extension=".sql" #>
+> ```
+>
+> The generated file will be a SQL Query.
+>
+> We will disucss it in CH6.
 
 ## reference
 ### Google Gemini
