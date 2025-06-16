@@ -8,13 +8,13 @@ You will learn how to
 
 ## CH2.1 -- create a text template
 > [!TIP]
-> It is highly recommend to develop the project with these prequisites
+> It is highly recommended to develop the project with these prequisites
 > 
-> latest version of `C#` 
+> + latest version of `C#` 
 >
-> `LTS` version of `.NET` (`.NET 8.0` or `.NET 9.0` at represent) 
+> + `LTS` version of `.NET` (`.NET 8.0` or `.NET 9.0` at represent) 
 >
-> `Visual Studio 2022` as `IDE`
+> + `Visual Studio 2022` as `IDE`
 
 Create a text template (`.tt`),
 
