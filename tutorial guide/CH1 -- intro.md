@@ -41,3 +41,7 @@ However,
 the core concept and design of programming such as `namespace` and `OOP` design pattern).
 
 + its learning curve might be slower
+
+## reference
+### docs
++ [Code Generation and T4 Text Templates](https://learn.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates?view=vs-2022)
