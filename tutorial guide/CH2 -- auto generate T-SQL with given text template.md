@@ -49,15 +49,75 @@ Then click `OK`.
 ## CH2.2 -- auto generate `T-SQL` with given text template
 To auto generate `T-SQL` with given text template,
 
-1. Write your code in `.tt` file,
+1. Ensure the `.tt` file property.
 
-2. After that, save the file.
+Ensure the `custom tool` property is set to `TextTemplatingFileGenerator`.
+
+Ensure the `custom build tool` property is set to `C# builder`.
+
+![custom tool property.png](custom%20tool%20property.png)
+
+2. Write your code in `.tt` file,
+
+> [!CAUTION]
+> Check it again and again with caution.
+>
+> To ensure the these following piece of Blocks are placed in order in `.tt` file.
+
+2.1 
+
+We need to set `C#` compiler will be used to build and then generate transformed file (we will discuss its details in CH8),
+
+```
+<#@ template debug="true" hostSpecific="true" language="C#" #>
+```
+
+2.2 
+
+We also have to set the transformed file has file extension `.sql` (we will discuss its details in CH8)
+
+```
+<#@ output extension=".sql" #>
+```
+
+2.3 
+
+We also need to load assemblies.
+
+2.3.1 
+
+To load assembly that built in current project (we will discuss its details in CH8),
+
+```
+<#@ assembly name="$(TargetPath)" #>
+```
+
+2.3.2 
+
+We also need to assemblies that is used for connection of SQL Server,
+
+```
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Data" #>
+```
+
+2.4 
+
+We need to generate `import` statement in transformed file (we will discuss its details in CH8),
+
+```
+<#@ import namespace="System.Data.SqlClient" #>
+```
+
+3. After that, save the file.
 
 > [!TIP]
 > By default, the keyshortcut to save a file is `CTRL`+`S`.
 
-3. Refresh the changes in Solution Explorer.
+4. It will generate `T-SQL` Query with `TextTemplatingFileGenerator` under `.tt` file.
 
-4. Then you will see `T-SQL` Query if generated successfully, or 
+5. Open transformed file, 
+
+you will see `T-SQL` Query if generated successfully, or 
 
 a simple `error message` if failed.
