@@ -8,32 +8,48 @@
 
 `T4` is a powerful tool that can easier to write the `text template` and finally generates bean (usually a script written in `C#`) with given `text template`.
 
-First, you can use most of `C#` syntax (such as to use repetive loop (for example `foreach`) to iterate all elements one-by-one) in text template.
+You can determine which programming language will be used for generated file by `T4` (we will discuss it in CH7).
 
-Second, `T4` can automatically generate `T-SQL` Query (`.sql` file)
+Additionally, you also can determine the file extension of generated file by `T4` (we will discuss it in CH6).
 
-with given `text template` file (`.tt` file) once the text template` file is saved.
+So there is a way to generate bean (a script written in `C#`) with given `text template`.
+
+First, set the generated file as `.sql`.
+
+```
+<#@ output extension=".sql" #>
+```
+
+We will discuss more details in CH6.
+
+Second, set the `C#` language is used for generated file.
+
+```
+<#@ template debug="true" hostSpecific="true" language="C#" #>
+```
+
+We will discuss more details in CH7.
+
+Then, you can use `C#` syntax (such as to use repetitive loop (for example `foreach`) to iterate all elements one-by-one) in text template.
+
+After finishing your text template and save it, 
+
+`T4` will automatically generate `T-SQL` Query (`.sql` file) that
 
 Lastly, executing generated `T-SQL` Query can automatically generate beans (usually a script written in `C#`)
 
-in `Visual Studio`.
-
 ## pro
-Since given T4 template file,
+The main pro of `text template` file and `T4`.
 
-it can generate these in `Visual Studio`.
++ you can customize the file extension of generated file by `T4 `easily with a `text template` file (we will discuss it in CH6)
  
-+ `T-SQL` Query (`.sql` file)
++ you can customize the which compiler of programming language will be used for generated file by `T4` easily with a `text template` file (we will discuss it in CH7)
 
-+ beans (usually a script written in `C#`)
-
-So, `T4` can offer these pros
+So we can imply that, `T4` also offer these pros
 
 + No manually write a bean
 
 + Automatically refreshes the bean (refresh when you save `.tt` file and build the project.)
-
-Additionally, it offers these pros 
 
 + writing `text template` is easier than writing html 
 
