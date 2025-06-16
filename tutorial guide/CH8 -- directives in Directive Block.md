@@ -74,3 +74,70 @@ indicates that the `T4` engine will generate a transformed file the ends with `.
 [Google Gemini's response -- explain the directive output in Text template](https://g.co/gemini/share/51232635d567)
 
 + About scenario, see [Google Gemini's response -- explain the directive output in Text template](https://g.co/gemini/share/51232635d567)
+
+## CH8.3 -- `assembly`
+
+| attribute | meaning | description | notes | notice
+| :-- | :-- | :-- |
+| `name` | assembly name to be loaded | tell `T4` engine this assembly needs to be loaded. | it can be either <ul><li>a `strong name`</li><li>`simple name`</li><li>file name (relative path or absoletely path)</li>| |
+
+> [!NOTE]
+> Quick Review of ways to represent a assembly to be loaded:
+>
+> + a strong name of an assembly refers a string that 
+>
+> contains assembly name and its details 
+>
+> (e.g. `System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089`)
+>
+> + a simple name refers a string that 
+>
+> ONLY contains assembly name
+> 
+> (e.g. `System.Core`)
+>
+> + a file path refers a string that 
+>
+> the assembly locates at
+>
+> (e.g. `C:\MyProject\bin\Debug\MyAssembly.dll`)
+
+> [!IMPORTANT]
+> `TargetPath` is a macro for building with `MSBuild`.
+>
+> It stores the full path of the target assembly being built by the current project.
+
+> [!IMPORTANT]
+> The syntax `$(`,`)` in `text template` is used to
+> 
+> access the properties of macro in `MSBuild`.
+> 
+> For example,
+>
+> `$(TargetPath)` will access the full path of the target assembly being built by the current project.
+>
+> then expand it by `MSBuild`
+
+
+> [!NOTE]
+> `MSBuild` is used for building script written in `C#`.
+>
+> `MSBuild.exe` is an execute file that is used for building script written in `C#`.
+
+### reference
+#### Google Gemini
+
+[Google Gemini's response -- explain assembly directives in T4 Text Template](https://g.co/gemini/share/b686527ffc6f)
+
+### further reading
+#### Google Gemini
+
++ About `$(`,`)` syntax, see 
+
+[Google Gemini's response -- What does `$(...)` syntax mean in T4 Text Template?](https://g.co/gemini/share/656934648874)
+
++ About `TargetPath` macro, see
+
+[Google Gemini's response -- explain assembly directives in T4 Text Template](https://g.co/gemini/share/b686527ffc6f)
+
+##
