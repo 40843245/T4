@@ -121,3 +121,7 @@ We need to generate `import` statement in transformed file (we will discuss its 
 you will see `T-SQL` Query if generated successfully, or 
 
 a simple `error message` if failed.
+
+## reference
+### MSDS
++ [Run-Time Text Generation with T4 Text Templates](https://learn.microsoft.com/en-us/visualstudio/modeling/run-time-text-generation-with-t4-text-templates?view=vs-2022&tabs=csharp)
